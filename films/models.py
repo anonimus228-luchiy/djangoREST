@@ -49,6 +49,7 @@ class Review(models.Model):
     text = models.TextField()
     film = models.ForeignKey(Film, on_delete=models.CASCADE,
                              related_name='reviews')
+    comment = models.TextField(null=True, blank=True)
     stars = models.IntegerField(default=10, choices=STARS)
 
     def __str__(self):
